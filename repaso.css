@@ -1,0 +1,161 @@
+/* FONDO ANIMADO */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("fondo.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* EFECTO MOVIMIENTO SUAVE FONDO */
+.fondo-animado {
+    animation: moverFondo 20s infinite alternate ease-in-out;
+}
+
+@keyframes moverFondo {
+    0% { background-position: center top; }
+    100% { background-position: center bottom; }
+}
+
+/* TITULO */
+.titulo {
+    margin-top: 30px;
+    font-size: 40px;
+    text-shadow: 2px 2px 10px black;
+    animation: aparecer 1s ease;
+}
+
+/* BLOQUES GENERALES */
+.bloque {
+    width: 80%;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: 0.4s;
+    animation: subir 1s ease;
+}
+
+/* ANIMACION ENTRADA */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* EFECTO HOVER BLOQUES */
+.bloque:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(255,255,255,0.3);
+}
+
+/* COLORES BLOQUES */
+.ejercicios {
+    background: rgba(0, 123, 255, 0.3);
+    border: 2px solid #00bfff;
+}
+
+.mensajes {
+    background: rgba(156, 39, 176, 0.3);
+    border: 2px solid #e040fb;
+}
+
+.tabla {
+    background: rgba(40, 167, 69, 0.3);
+    border: 2px solid #00ff88;
+}
+
+/* BOTONES BASE */
+button {
+    margin: 10px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* EFECTO CLICK */
+button:active {
+    transform: scale(0.9);
+}
+
+/* ================= BOTONES EJERCICIO (AZUL NEÓN) ================= */
+.btn-ejercicio {
+    background: #007bff;
+    color: white;
+    box-shadow: 0 0 10px #007bff;
+}
+
+.btn-ejercicio:hover {
+    background: #0056b3;
+    box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff;
+    transform: scale(1.1);
+}
+
+/* ================= BOTONES MENSAJE (MORADO NEÓN) ================= */
+.btn-mensaje {
+    background: #9c27b0;
+    color: white;
+    box-shadow: 0 0 10px #9c27b0;
+}
+
+.btn-mensaje:hover {
+    background: #6a1b9a;
+    box-shadow: 0 0 20px #e040fb, 0 0 40px #e040fb;
+    transform: scale(1.1);
+}
+
+/* ================= BOTON TABLA (VERDE NEÓN) ================= */
+.btn-tabla {
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 0 10px #28a745;
+}
+
+.btn-tabla:hover {
+    background: #1e7e34;
+    box-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88;
+    transform: scale(1.15);
+}
+
+/* EFECTO BRILLO DESLIZANTE */
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+    transition: 0.5s;
+}
+
+button:hover::before {
+    left: 100%;
+}
+
+/* ANIMACION TITULO */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
